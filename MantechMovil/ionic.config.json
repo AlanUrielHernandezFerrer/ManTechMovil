@@ -1,0 +1,7 @@
+{
+  "name": "MantechMovil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
