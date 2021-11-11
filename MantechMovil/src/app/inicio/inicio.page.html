@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+    <ion-icon slot="end" name="exit-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<br>
+<ion-content>
+  <ion-item>
+    <ion-avatar slot="start">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-avatar>
+    <ion-label>Nombre del empleado</ion-label>
+  </ion-item>
+<br>
+  <ion-item>
+    <ion-avatar slot="start">
+      <ion-icon name="desktop-outline"></ion-icon>
+    </ion-avatar>
+    <ion-label>Dispositivos a cargo</ion-label>
+  </ion-item>
+</ion-content>
+<ion-content><ion-img [src]=""></ion-img></ion-content>
+<ion-content>
+    <!-- fab placed to the top end -->
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <br>
+    <!-- fab placed to the top end -->
+    <ion-fab vertical="center" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="reload-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>
+  
+  <ion-content><ion-nav-link [routerLink]="['/home']" >Generar historial</ion-nav-link></ion-content> 
+ 
+
