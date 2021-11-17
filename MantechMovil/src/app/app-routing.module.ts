@@ -23,9 +23,26 @@ const routes: Routes = [
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
+
   {
-    path: 'actualizacion-dispositos',
-    loadChildren: () => import('./actualizacion-dispositos/actualizacion-dispositos.module').then( m => m.ActualizacionDispositosPageModule)
+    path: 'actualizaciondispositivos',
+    loadChildren: () => import('./actualizaciondispositivos/actualizaciondispositivos.module').then( m => m.ActualizaciondispositivosPageModule)
+  },
+  {
+    path: 'mantenimiento-preventivo',
+    loadChildren: () => import('./mantenimiento-preventivo/mantenimiento-preventivo.module').then( m => m.MantenimientoPreventivoPageModule)
+  },
+  {
+    path: 'historial-dispositivos',
+    loadChildren: () => import('./historial-dispositivos/historial-dispositivos.module').then( m => m.HistorialDispositivosPageModule)
+  },
+  {
+    path: 'historial-correctivo',
+    loadChildren: () => import('./historial-correctivo/historial-correctivo.module').then( m => m.HistorialCorrectivoPageModule)
+  },
+  {
+    path: 'recuperar-contrasenia',
+    loadChildren: () => import('./recuperar-contrasenia/recuperar-contrasenia.module').then( m => m.RecuperarContraseniaPageModule)
   },
 ];
 
