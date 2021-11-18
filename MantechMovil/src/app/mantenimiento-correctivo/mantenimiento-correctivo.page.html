@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mantenimiento Correctivo</ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<ion-content>
+  <ion-title>Dale Mantenimiento a tu Dispositivo!</ion-title>
+  <br>
+ <ion-list>
+   <div>
+    <ion-input placeholder="Motivo" maxlength=10 name="txtMotivo" required="txtMotivo"></ion-input>
+   </div>
+    <ion-input placeholder="Fecha de Prevención" maxlength=20 name="txtFechaPrevencion" required="txtFechaPrevencion"></ion-input>
+   <div>
+    <ion-input placeholder="Detalle" maxlength=20 name="txtDetalle" required="txtDetalle"></ion-input>
+   </div>
+ </ion-list>
+ <ion-card>
+ <div align="center"><img src="assets/img/Dispositivos.jpg" /></div>
+</ion-card>
+ <br>
+ <ion-button expand="block" name="btnEnviar" >Enviar</ion-button>
+ <ion-button expand="block" color="light"  name="btnCancelar">Cancelar</ion-button>
+ <br>
+<div align= center>
+<ion-nav-link [routerLink]="['/home']" >Generar historial</ion-nav-link>
+</div>
+<br>
+</ion-content>

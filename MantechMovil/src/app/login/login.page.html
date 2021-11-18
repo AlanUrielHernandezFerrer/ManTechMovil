@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-title>Bienvenidos a ManTeach Ingresa!</ion-title>
+  <br>
+  <br>
+  <br>
+ <ion-input placeholder="Usuario o Correo Electronico" maxlength=10 name="txtEmail" required="btnLogin"></ion-input>
+ <ion-input placeholder="Contraseña" maxlength=10 name="txtPassword" required="btnLogin"></ion-input>
+ <br>
+  <ion-button expand="block" name="btnLogin" >Ingresa</ion-button>
+  <br>
+  <br>
+<center>
+  <ion-nav-link  [routerLink]="['/home']" >Olvidaste tú contraseña!</ion-nav-link>
+</center>
+<br>
+<br>
+<center>
+<ion-nav-link  [routerLink]="['/home']" >No tienes Cuenta!</ion-nav-link>
+</center>
+</ion-content>
