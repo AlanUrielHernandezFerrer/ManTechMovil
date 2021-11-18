@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'clave-empresa',
+    redirectTo: 'pantalla-inicial',
     pathMatch: 'full'
   },
   {
@@ -43,6 +43,38 @@ const routes: Routes = [
   {
     path: 'recuperar-contrasenia',
     loadChildren: () => import('./recuperar-contrasenia/recuperar-contrasenia.module').then( m => m.RecuperarContraseniaPageModule)
+  },
+  {
+    path: 'pantalla-inicial',
+    loadChildren: () => import('./pantalla-inicial/pantalla-inicial.module').then( m => m.PantallaInicialPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'registro-dispositivos',
+    loadChildren: () => import('./registro-dispositivos/registro-dispositivos.module').then( m => m.RegistroDispositivosPageModule)
+  },
+  {
+    path: 'dispositivo',
+    loadChildren: () => import('./dispositivo/dispositivo.module').then( m => m.DispositivoPageModule)
+  },
+  {
+    path: 'mantenimiento-correctivo',
+    loadChildren: () => import('./mantenimiento-correctivo/mantenimiento-correctivo.module').then( m => m.MantenimientoCorrectivoPageModule)
+  },
+  {
+    path: 'modificacion-fecha-preventivo',
+    loadChildren: () => import('./modificacion-fecha-preventivo/modificacion-fecha-preventivo.module').then( m => m.ModificacionFechaPreventivoPageModule)
+  },
+  {
+    path: 'historial-preventivo',
+    loadChildren: () => import('./historial-preventivo/historial-preventivo.module').then( m => m.HistorialPreventivoPageModule)
+  },
+  {
+    path: 'recuperar-clave',
+    loadChildren: () => import('./recuperar-clave/recuperar-clave.module').then( m => m.RecuperarClavePageModule)
   },
 ];
 
