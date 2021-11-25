@@ -6,11 +6,14 @@
 </ion-header>
 <br>
 <ion-content>
-  <ion-item>
+
+  <ion-item *ngFor = "let usuario of usuarios">
     <ion-avatar slot="start">
       <ion-icon name="person-outline"></ion-icon>
     </ion-avatar>
-    <ion-label>Nombre del empleado</ion-label>
+    <ion-label>
+      <h3>{{usuario.nombre_empleado}}</h3>
+    </ion-label>
   </ion-item>
 <br>
   <ion-item>
@@ -20,7 +23,7 @@
     <ion-label>Dispositivos a cargo</ion-label>
   </ion-item>
 </ion-content>
-<ion-content><ion-img [src]=""></ion-img></ion-content>
+
 <ion-content>
     <!-- fab placed to the top end -->
     <ion-fab vertical="top" horizontal="end" slot="fixed">
@@ -35,8 +38,9 @@
         <ion-icon name="reload-outline"></ion-icon>
       </ion-fab-button>
     </ion-fab>
+    <ion-nav-link [routerLink]="['/home']" >Generar historial</ion-nav-link>
   </ion-content>
   
-  <ion-content><ion-nav-link [routerLink]="['/home']" >Generar historial</ion-nav-link></ion-content> 
+  
  
 

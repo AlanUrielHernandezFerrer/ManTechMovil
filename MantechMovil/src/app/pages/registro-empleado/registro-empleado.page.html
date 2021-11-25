@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro Empleado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-title>Registro</ion-title>
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label position="floating">Nombre empleado</ion-label>
+      <ion-input ngDefaultControl type="text" required formControlName="nombre_empleado"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Apellido Paterno</ion-label>
+      <ion-input ngDefaultControl type="text" required formControlName="apellido_paterno"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Apellido Materno</ion-label>
+      <ion-input ngDefaultControl type="text" required formControlName="apellido_materno"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input ngDefaultControl type="text" required formControlName="telefono"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input ngDefaultControl type="text" required formControlName="correo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input ngDefaultControl type="text" required formControlName="contrasena"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Clave empresa</ion-label>
+      <ion-input ngDefaultControl type="text" required formControlName="clave_empresa"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">fk_empresa</ion-label>
+      <ion-input ngDefaultControl type="text" required formControlName="fk_empresa"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">fk_rol</ion-label>
+      <ion-input ngDefaultControl type="text" required formControlName="fk_rol"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">fk_statususuario</ion-label>
+      <ion-input ngDefaultControl type="text" required formControlName="fk_statususuario"></ion-input>
+    </ion-item>
+  
+    <ion-button (click)="save()" expand="block"  shape="round" >
+      Crear
+    </ion-button>
+  </form>
+</ion-content>
+
+
+
+
+
+
+
