@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'pantalla-inicial',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {

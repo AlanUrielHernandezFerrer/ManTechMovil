@@ -5,23 +5,21 @@
 </ion-header>
 
 <ion-content>
-  <br>
-  <ion-title>Bienvenidos a ManTeach Ingresa!</ion-title>
-  <br>
-  <br>
-  <br>
- <ion-input placeholder="Usuario o Correo Electronico" maxlength=10 name="txtEmail" required="btnLogin"></ion-input>
- <ion-input placeholder="Contraseña" maxlength=10 name="txtPassword" required="btnLogin"></ion-input>
- <br>
-  <ion-button expand="block" name="btnLogin" >Ingresa</ion-button>
-  <br>
-  <br>
-<center>
-  <ion-nav-link  [routerLink]="['/home']" >Olvidaste tú contraseña!</ion-nav-link>
-</center>
-<br>
-<br>
-<center>
-<ion-nav-link  [routerLink]="['/home']" >No tienes Cuenta!</ion-nav-link>
-</center>
+  <form #form="ngForm" (ngSubmit)="onlogin(form)">
+    <ion-item>
+      <ion-input [(ngModel)]="login.correo" name="email" type="email" placeholder="asdfg@gmail.com" ngModel required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="login.contrasena" name="password" [type]="passwordType" placeholder="Contraseña"></ion-input>
+    </ion-item>
+
+    <ion-button  type="submit"expand="block" fill="clear" shape="round">  
+      Ingresar
+    </ion-button>
+    <ion-button (click)="onlogin()" expand="block" fill="clear" shape="round">
+      Click me
+    </ion-button>
+  </form>
 </ion-content>
+
