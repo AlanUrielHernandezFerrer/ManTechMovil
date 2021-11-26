@@ -8,8 +8,8 @@ export interface Usuario {
     correo:string;
     contrasena:string;
     clave_empresa:string;
-    fk_empresa:string;
-    fk_rol:string;
-    fk_statususuario:string;
+    fk_empresa:any;
+    fk_rol:any;
+    fk_statususuario:any;
 
 }
