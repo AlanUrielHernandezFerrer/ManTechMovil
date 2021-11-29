@@ -8,17 +8,13 @@
   
 
 <ion-content>
-  <br>
-  <ion-title>Bienvenidos</ion-title>
-  <br>
-  <br>
-  <br>
- <ion-input placeholder="Clave empresa" maxlength=10 name="txtClaveEmpresa" required="btnClaveEmpresa"></ion-input>
- <br>
-  <ion-button expand="block" name="btnClaveEmpresa" >Verificar</ion-button>
-  <br>
-  <br>
-<center>
-  <ion-nav-link  [routerLink]="['/home']" >Recuperar clave</ion-nav-link>
-</center>
+  <form >
+    <ion-item>
+      <ion-input [(ngModel)]="claveunica" name="claveunica"  placeholder="Ingresa la clave unica" ></ion-input>
+    </ion-item>
+   
+    <ion-button (click)="Login()" expand="block" fill="clear" shape="round">
+      Click me
+    </ion-button>
+  </form>
 </ion-content>

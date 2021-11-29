@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   api:'https://mantech-back.herokuapp.com/api/',
-  direccionLogin:'https://mantech-back.herokuapp.com/api/UsuariosSF/'
+  direccionLogin:'https://mantech-back.herokuapp.com/api/UsuariosSF/',
+  direccionLoginEmpresa:'https://mantech-back.herokuapp.com/api/Empresas/Clave/'
 };
 
 /*

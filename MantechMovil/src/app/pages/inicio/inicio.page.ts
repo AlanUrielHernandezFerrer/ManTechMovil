@@ -9,13 +9,16 @@ import { UsuariosService } from '@core/services/usuarios.service';
 })
 export class InicioPage implements OnInit {
   usuarios: Usuario []=[];
-
   constructor(private usuarioService: UsuariosService) { }
 
   ngOnInit() {
-    this.usuarioService.getAllUsuario().subscribe(data=> {
-      this.usuarios = data;
-    });
+    this.usuarioService.getAllUsuario().subscribe(data => {
+        this.usuarios=data;
+        
+        });
+    
+    }
+
+
   }
 
-}

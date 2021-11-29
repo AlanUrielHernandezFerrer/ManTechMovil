@@ -5,21 +5,19 @@
 </ion-header>
 
 <ion-content>
-  <form #form="ngForm" (ngSubmit)="onlogin(form)">
+  <form #form="ngForm">
     <ion-item>
-      <ion-input [(ngModel)]="login.correo" name="email" type="email" placeholder="asdfg@gmail.com" ngModel required></ion-input>
+      <ion-input [(ngModel)]="correo" name="email" type="email" placeholder="asdfg@gmail.com" ngModel required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input [(ngModel)]="login.contrasena" name="password" [type]="passwordType" placeholder="Contraseña"></ion-input>
+      <ion-input [(ngModel)]="contrasena" name="password" [type]="passwordType" placeholder="Contraseña"></ion-input>
     </ion-item>
 
-    <ion-button  type="submit"expand="block" fill="clear" shape="round">  
+    <ion-button  (click)="Login()" type="submit"expand="block" fill="clear" shape="round">  
       Ingresar
     </ion-button>
-    <ion-button (click)="onlogin()" expand="block" fill="clear" shape="round">
-      Click me
-    </ion-button>
+    
   </form>
 </ion-content>
 

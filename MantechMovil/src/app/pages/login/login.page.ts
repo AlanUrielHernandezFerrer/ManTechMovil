@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
 import { Router } from '@angular/router';
-import { DBkeys } from '@core/models/dbkeys';
 import { User } from '@core/models/User';
+import { Usuario } from '@core/models/Usuario.model';
 import { AuthService } from '@core/services/auth.service';
-import { SessionStorageService } from '@core/services/session-storage.service';
-import { AlertController, MenuController, ToastController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-login',
@@ -13,60 +12,85 @@ import { AlertController, MenuController, ToastController } from '@ionic/angular
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  private UserLogin:User;
+
+  correo ="";
+  contrasena="";
 
   constructor(
     private router: Router,
-    private toastController: ToastController,
-    private menuCtrl: MenuController,
-    private as: AuthService,
-    private storage:SessionStorageService,) {}
-    private login: User = {correo:'',contrasena:''};
-    passwordShown = false;
-    passwordType = 'password';
-    isLogged = false;
-    isLoginFail= false;
+    private service: AuthService,) {}
+  user :User = new User();
+  ngOnInit(): void {
+    let nombre_empleado= localStorage.getItem('nombre_empleado')!; 
+    let apellido_paterno = localStorage.getItem('apellido_paterno')!; 
+    let apellido_materno= localStorage.getItem('apellido_materno')!;
+    let telefono= localStorage.getItem('telefono')!;
+    let correo= localStorage.getItem('correo')!;
+    let contrasena= localStorage.getItem('contrasena')!;
+    let clave_empresa= localStorage.getItem('clave_empresa')!;
+    let fk_empresa= localStorage.getItem('fk_empresa')!;
+    let pagenav= localStorage.getItem('pagenav')!;
 
-  ngOnInit() {
-    this.menuCtrl.enable(false);
-  }
-  onlogin(form: NgForm){
-    const postData: User =  
-    {
-      "correo":this.login.correo,
-      "contrasena":this.login.contrasena
-    }
-    this.as.validarUsuario(postData).subscribe((res) => {
-      if(res.correo){
-        this.storage.set(DBkeys.ID, res.id);
-        this.storage.set(DBkeys.NOMBRE_EMPLEADO, res.nombre_empleado);
-        this.storage.set(DBkeys.APELLIDO_PATERNO, res.apellido_paterno);
-        this.storage.set(DBkeys.APELLIDO_MATERNO, res.apellido_materno);
-        this.storage.set(DBkeys.TELEFONO, res.telefono);
-        this.storage.set(DBkeys.CORREO, res.correo);
-        this.storage.set(DBkeys.CONTRASENA, res.contrasena);
-        this.storage.set(DBkeys.CLAVE_EMPRESA, res.clave_empresa);
-        this.storage.set(DBkeys.FK_EMPRESA, res.fk_empresa);
-        this.storage.set(DBkeys.FK_ROL, res.fk_rol);
-        this.storage.set(DBkeys.FK_STATUSUSUARIO, res.fk_statususuario);
-        setTimeout( ()=> {
-          this.router.navigateByUrl('/inicio')},1000);
+    if(correo !="x" || contrasena  !="x" ){
 
+      //this.router.navigate([pagenav])
+      
+      }else{
+        localStorage.setItem("nombre_empleado","x"); 
+        localStorage.setItem("apellido_paterno","x"); 
+        localStorage.setItem("apellido_materno","x");
+        localStorage.setItem("telefono","x");
+        localStorage.setItem("correo","x");
+        localStorage.setItem("contrasena","x");
+        localStorage.setItem("clave_empresa","x");
+      
       }
-    }, err => {
-      this.presentarError("Error de correo o contraseña");
-    });
+  }
   
-  }
-  async presentarError(msg:string){
-    const toast = await this.toastController.create({
-      message: msg,
-      duration:2000,
-      position:'top',
-      color:'danger',
-      cssClass:'toast',
-    });
-    toast.present();
-  }
+  Login(){
+
+    this.service.getUserUsario(this.correo,this.contrasena)
+    .subscribe(
+       data=>{
+    
+
+      if(data == null){
+
+    alert("no existe este usuario");
+      }else{
+        this.user=data;
+        
+        console.log(data)
+        if(this.correo=== this.user.correo && this.contrasena=== this.user.contrasena){
+          localStorage.setItem("nombre_empleado",this.user.nombre_empleado.toString()); 
+          localStorage.setItem("apellido_paterno",this.user.apellido_paterno.toString()); 
+          localStorage.setItem("apellido_materno",this.user.apellido_materno.toString());
+          localStorage.setItem("telefono",this.user.telefono.toString());
+          localStorage.setItem("correo",this.user.correo.toString());
+          localStorage.setItem("contrasena",this.user.contrasena.toString());
+          localStorage.setItem("clave_empresa",this.user.clave_empresa.toString());
+    
+   
+        this.router.navigate(["inicio"])
+
+    
+      
+          
+        }else{
+
+alert("usuario o contraseña incorecta")
+
+         }
+
+       }
+   
+   })
+    
+ }
+ 
+ Home(){
+  this.router.navigate([""])
+
+}
 
 }
