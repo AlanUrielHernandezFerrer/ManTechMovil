@@ -6,11 +6,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('src/app/pages/home/home.module').then( m => m.HomePageModule)
   },
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
+
   {
     path: 'clave-empresa',
     loadChildren: () => import('src/app/pages/clave-empresa/clave-empresa.module').then( m => m.ClaveEmpresaPageModule)
@@ -76,6 +72,13 @@ const routes: Routes = [
     path: 'recuperar-clave',
     loadChildren: () => import('src/app/pages/recuperar-clave/recuperar-clave.module').then( m => m.RecuperarClavePageModule)
   },
+  {
+    path: 'splash',
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
+  },
+
+ 
+
 ];
 
 @NgModule({
