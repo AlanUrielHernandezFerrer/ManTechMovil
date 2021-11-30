@@ -6,8 +6,10 @@
 </ion-header>
 <br>
 <ion-content>
-
-  <ion-item *ngFor = "let usuario of usuarios">
+  <ion-list>
+  
+    <ion-item-sliding *ngFor="let estado of estados">
+      <ion-item>
     <ion-avatar slot="start">
       <ion-icon name="person-outline"></ion-icon>
     </ion-avatar>
@@ -22,15 +24,12 @@
     </ion-avatar>
     <ion-label>Dispositivos a cargo</ion-label>
   </ion-item>
-</ion-content>
-
-<ion-content>
+</ion-item-sliding>
+</ion-list>
     <!-- fab placed to the top end -->
-    <ion-fab vertical="top" horizontal="end" slot="fixed">
-      <ion-fab-button>
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+    <ion-fab-button (click)="createEstado()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
     <br>
     <!-- fab placed to the top end -->
     <ion-fab vertical="center" horizontal="end" slot="fixed">

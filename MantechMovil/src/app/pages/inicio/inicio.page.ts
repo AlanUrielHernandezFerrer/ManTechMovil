@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '@core/models/Usuario.model';
 import { UsuariosService } from '@core/services/usuarios.service';
+import { ModalController } from '@ionic/angular';
+import { RegistroDispositivosPage } from '../registro-dispositivos/registro-dispositivos.page';
+import { ResgistroDispositivoComponent } from '../resgistro-dispositivo/resgistro-dispositivo.component';
 
 @Component({
   selector: 'app-inicio',
@@ -9,7 +12,7 @@ import { UsuariosService } from '@core/services/usuarios.service';
 })
 export class InicioPage implements OnInit {
   usuarios: Usuario []=[];
-  constructor(private usuarioService: UsuariosService) { }
+  constructor(private usuarioService: UsuariosService, private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.usuarioService.getAllUsuario().subscribe(data => {
@@ -17,6 +20,14 @@ export class InicioPage implements OnInit {
         
         });
     
+    }
+   async createEstado(id?: number){
+      const modal = await this.modalCtrl.create({
+        component: ResgistroDispositivoComponent,
+        componentProps: {id},
+        
+      });
+      return await modal.present();
     }
 
 
