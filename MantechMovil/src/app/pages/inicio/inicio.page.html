@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Inicio</ion-title>
-    <ion-icon slot="end" name="exit-outline"></ion-icon>
+
   </ion-toolbar>
 </ion-header>
 <br>
@@ -10,14 +10,11 @@
   
     <ion-item-sliding *ngFor="let estado of estados">
       <ion-item>
-    <ion-avatar slot="start">
-      <ion-icon name="person-outline"></ion-icon>
-    </ion-avatar>
     <ion-label>
-      <h3>{{usuario.nombre_empleado}}</h3>
+      <h3>{{ usuario.nombre_empleado }}</h3>
     </ion-label>
   </ion-item>
-<br>
+
   <ion-item>
     <ion-avatar slot="start">
       <ion-icon name="desktop-outline"></ion-icon>
@@ -25,9 +22,15 @@
     <ion-label>Dispositivos a cargo</ion-label>
   </ion-item>
 </ion-item-sliding>
+
 </ion-list>
-    <!-- fab placed to the top end -->
-    <ion-fab-button (click)="createEstado()">
+<ion-content>
+    <!-- fab placed to the top end 
+    <ion-fab-button  [routerLink]="['/registro-dispositivos']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    -->
+    <ion-fab-button (click)="createEstado()" >
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
     <br>
@@ -39,6 +42,7 @@
     </ion-fab>
     <ion-nav-link [routerLink]="['/home']" >Generar historial</ion-nav-link>
   </ion-content>
+</ion-content>
   
   
  

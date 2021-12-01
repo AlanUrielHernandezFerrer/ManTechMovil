@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Dispositivo } from '@core/models/Dispositivo';
+import { DispositivosService } from '@core/services/dispositivos.service';
 
 @Component({
   selector: 'app-dispositivo',
@@ -6,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dispositivo.page.scss'],
 })
 export class DispositivoPage implements OnInit {
-
-  constructor() { }
+  dispositivo: Dispositivo[]=[];
+  constructor(private dispositivoService: DispositivosService) { }
 
   ngOnInit() {
   }

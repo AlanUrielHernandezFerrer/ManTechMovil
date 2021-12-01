@@ -5,34 +5,35 @@
 </ion-header>
 <br>
 <ion-content>
-  <form [formGroup]="form">
+  <ion-content>
+ 
     <ion-item>
       <ion-label position="floating">Detalles</ion-label>
-      <ion-input ngDefaultControl type="text" required formControlName="detalles"></ion-input>
+      <ion-input  type="text" required [(ngModel)]="dispo.detalles" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Fecha mantenimiento preventivo</ion-label>
-      <ion-input ngDefaultControl type="datetime" required formControlName="marca"></ion-input>
+      <ion-input type="text" required [(ngModel)]="dispo.fecha_mantenimiento_prev"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Marca</ion-label>
-      <ion-input ngDefaultControl type="text" required formControlName="fecha_mantenimiento_prev"></ion-input>
+      <ion-input type="text" required [(ngModel)]="dispo.marca"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Modelo</ion-label>
-      <ion-input ngDefaultControl type="text" required formControlName="modelo"></ion-input>
+      <ion-input type="text" required [(ngModel)]="dispo.modelo"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input ngDefaultControl type="text" required formControlName="nombre"></ion-input>
+      <ion-label position="floating">Nombre </ion-label>
+      <ion-input type="text" required [(ngModel)]="dispo.nombre"> </ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Tiempo de vida</ion-label>
-      <ion-input ngDefaultControl type="text" required formControlName="tiempo_vida"></ion-input>
+      <ion-input  type="text" required [(ngModel)]="dispo.tiempo_vida"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Tipo de dispositivo</ion-label>
-      <ion-input ngDefaultControl type="text" required formControlName="tipo_dispositivo"></ion-input>
+      <ion-input ngDefaultControl type="text" required [(ngModel)]="dispo.tipo_dispositivo"></ion-input>
     </ion-item>
     <ion-button (click)="save()" expand="block"  shape="round" >
       Crear
@@ -40,7 +41,8 @@
    
   
  
-  <ion-button expand="block" color="light"  name="btnCancelar">Cancelar</ion-button>
+  <ion-button  [routerLink]="['/inicio']" expand="block" color="light"  name="btnCancelar">Cancelar</ion-button>
+  
 
-  </form>
+
 </ion-content>

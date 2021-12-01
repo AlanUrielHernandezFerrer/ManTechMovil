@@ -1,4 +1,4 @@
-export interface Dispositivo {
+export class Dispositivo {
 detalles:string;
 fecha_mantenimiento_prev:string;
 fk_statsdispositivo:any;

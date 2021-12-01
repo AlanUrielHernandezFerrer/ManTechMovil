@@ -10,10 +10,10 @@ export class AppComponent {
   constructor(
     public router: Router
   ) {
-    this.initializeApp();
+    //this.initializeApp();
   }
 
-  initializeApp(){
-    this.router.navigateByUrl('splash');
-  }
+  //initializeApp(){
+   // this.router.navigateByUrl('splash');
+  //}
 }
